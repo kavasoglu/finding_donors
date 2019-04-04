@@ -13152,7 +13152,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13337,7 +13337,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Total number of records</span>
@@ -13428,7 +13428,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Split the data into features and target label</span>
@@ -13477,7 +13477,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Log-transform the skewed features</span>
@@ -13527,7 +13527,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import sklearn.preprocessing.StandardScaler</span>
@@ -13751,7 +13751,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: One-hot encode the &#39;features_log_minmax_transform&#39; data using pandas.get_dummies()</span>
@@ -13804,7 +13804,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import train_test_split</span>
@@ -14504,8 +14504,8 @@ fbeta score for training: 0.7341269841269841</code></pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>GradientBoosting algorithm uses weak learners to build a strong learner at the end. It uses all the training data to learn from, builds a learner, then calculates the errors considering the each misclassified data point. Then, tries to correct these errors by building a new learner. Each time, it keeps the previous learners (called weak learners) and tries to build a new one aiming to correct the existing errors. And, at the end, it ends up with a strong learner with the least error score.</p>
-<p>Since it uses all the training data and works sequentially, training is computationally heavy and takes time. But, after building the model, prediction is fairly simple. It basically calculates the output by executing the model.</p>
+<p>GradientBoosting works as a sequential learning algorithm. It uses sample data to train a "weak" learner which has just a little better prediction than random guess. Then, it calculates the errors and tries to correct these errors by building a new "weak" learner. At each step, it combines the learners and tries to build a new one aiming to minimize the existing errors. These steps are repeated until it starts overfitting or the error rate becomes constant. At the end, we have a combination of weak learners, which is called a strong learner, giving the least error rate for the sample data. Since each learner has a different error rate, algorithm gives relative weights based on how well they perform on the data to combine these learners to produce the final strong learner.</p>
+<p>It uses all the training data and works sequentially, so training is computationally heavy and takes time. But, after building the model, prediction is fairly simple which is calculated as the weighted sum of the outputs of the weak learners.</p>
 
 </div>
 </div>
@@ -14873,7 +14873,7 @@ F-score on testing data: 0.7035
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>It does well enough, we just used 5 features instead of 13. fbeta score is lower than the model trained on full data, but given 5 features covered 0.7 weight of the data, having 0.05 point lower fbeta score seems reasonable.</p>
+<p>It does well enough, we just used 5 features instead of 103. fbeta score is lower than the model trained on full data, but given 5 features covered 0.7 weight of the data, having 0.05 point lower fbeta score seems reasonable.</p>
 <p>Yes, if training time was a factor, I would use feature selection first and then train my model. It is important to get good coverage with less features.</p>
 
 </div>
